@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukesh R | AI Engineer Portfolio</title>
+    <title>Sukesh R | AI & Machine Learning Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles - Updated for Dark Theme */
         :root {
-            --primary-color: #147efb;
+            --primary-color: #00d2ff;
             --secondary-color: #9d4edd;
-            --accent-color: #fd4766;
+            --accent-color: #3a86ff;
             --dark-color: #f8f9fa;
-            --light-color: #adb5bd;
-            --bg-color: #0a0a0a;
-            --card-bg: #161616;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --gradient-magic: linear-gradient(90deg, #147efb, #9d4edd);
+            --light-color: #a0aec0;
+            --bg-color: #080b11;
+            --card-bg: #121824;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --gradient-magic: linear-gradient(135deg, #00d2ff 0%, #9d4edd 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 210, 255, 0.15) 0%, rgba(157, 78, 221, 0.15) 100%);
         }
 
         * {
@@ -39,8 +40,8 @@
             color: var(--light-color);
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(20, 126, 251, 0.05) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(157, 78, 221, 0.05) 0%, transparent 55%);
+                radial-gradient(circle at 15% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(157, 78, 221, 0.05) 0%, transparent 45%);
             overflow-x: hidden;
         }
 
@@ -90,11 +91,14 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             padding: 14px 30px;
             background: var(--gradient-magic);
             color: white;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.6rem;
@@ -102,11 +106,24 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(20, 126, 251, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00d2ff;
+            color: #00d2ff;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 210, 255, 0.1);
+            color: white;
         }
 
         /* Header & Navigation */
@@ -116,11 +133,11 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(8, 11, 17, 0.9);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
             padding: 20px 0;
-            border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .navbar {
@@ -156,7 +173,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--light-color);
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.6rem;
             transition: all 0.3s ease;
             position: relative;
@@ -190,7 +207,7 @@
 
         /* Hero Section */
         .hero {
-            padding-top: 150px;
+            padding-top: 160px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -198,7 +215,7 @@
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
             align-items: center;
         }
@@ -207,6 +224,7 @@
             font-size: 4.8rem;
             font-weight: 800;
             margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
         .hero-text h2 {
@@ -220,10 +238,10 @@
         }
 
         .hero-text p {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             color: var(--light-color);
             margin-bottom: 30px;
-            max-width: 500px;
+            max-width: 580px;
         }
 
         .hero-btns {
@@ -243,14 +261,14 @@
         }
 
         .profile-img {
-            width: 380px;
-            height: 380px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             object-fit: cover;
-            border: 10px solid transparent;
+            border: 4px solid transparent;
             background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
                         var(--gradient-magic) border-box;
-            box-shadow: 0 20px 40px var(--shadow-color);
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.2);
             position: relative;
             z-index: 2;
         }
@@ -261,49 +279,33 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 3;
         }
 
         .tech-icon {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: var(--card-bg);
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
-            background: var(--gradient-magic);
-            color: white;
-            box-shadow: 0 0 20px rgba(20, 126, 251, 0.3);
+            font-size: 2.2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: #00d2ff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             animation: float 6s infinite ease-in-out;
         }
 
-        .tech-icon:nth-child(1) {
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-        .tech-icon:nth-child(2) {
-            top: 70%;
-            left: 0;
-            animation-delay: 1s;
-        }
-        .tech-icon:nth-child(3) {
-            top: 20%;
-            right: 5%;
-            animation-delay: 2s;
-        }
-        .tech-icon:nth-child(4) {
-            top: 80%;
-            right: 10%;
-            animation-delay: 3s;
-        }
+        .tech-icon:nth-child(1) { top: 0%; left: 10%; animation-delay: 0s; }
+        .tech-icon:nth-child(2) { top: 65%; left: -5%; animation-delay: 1.5s; }
+        .tech-icon:nth-child(3) { top: 5%; right: 5%; animation-delay: 3s; }
+        .tech-icon:nth-child(4) { top: 75%; right: 10%; animation-delay: 4.5s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         /* About Section */
@@ -328,16 +330,27 @@
         .education-card {
             background-color: var(--card-bg);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 10px 30px var(--shadow-color);
-            border-left: 5px solid;
-            border-image: var(--gradient-magic);
-            border-image-slice: 1;
+            border: 1px solid var(--card-border);
+            position: relative;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-magic);
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
         }
 
         .education-card h3 {
             font-size: 2.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             background: var(--gradient-magic);
             -webkit-background-clip: text;
             background-clip: text;
@@ -351,13 +364,10 @@
         }
 
         .institution i {
-            font-size: 2.4rem;
-            background: var(--gradient-magic);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 2.2rem;
+            color: #00d2ff;
             margin-right: 15px;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
         .institution h4 {
@@ -366,31 +376,30 @@
         }
 
         .institution p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--light-color);
         }
 
         /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 30px;
         }
 
         .skill-card {
             background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 35px;
+            border-radius: 12px;
             box-shadow: 0 10px 30px var(--shadow-color);
             transition: all 0.3s ease;
-            border: 1px solid transparent;
-            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-                        linear-gradient(135deg, transparent 30%, rgba(20, 126, 251, 0.1), rgba(157, 78, 221, 0.1)) border-box;
+            border: 1px solid var(--card-border);
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(20, 126, 251, 0.2);
+            transform: translateY(-8px);
+            border-color: rgba(0, 210, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.15);
         }
 
         .skill-header {
@@ -400,80 +409,129 @@
         }
 
         .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-magic);
-            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-glow);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            color: white;
-            font-size: 2.4rem;
-        }
-
-        .skill-card h3 {
+            color: #00d2ff;
             font-size: 2.2rem;
         }
 
-        .skill-list {
-            list-style: none;
+        .skill-card h3 {
+            font-size: 2.0rem;
         }
 
-        .skill-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 1.3rem;
+            font-family: 'Fira Code', monospace;
+            color: #e2e8f0;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(157, 78, 221, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 2.0rem;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            font-size: 1.4rem;
+            color: var(--light-color);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-footer {
             display: flex;
             justify-content: space-between;
-            font-size: 1.6rem;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--card-border);
         }
 
-        .skill-list li:last-child {
-            border-bottom: none;
+        .project-links a {
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            margin-left: 15px;
+            transition: color 0.3s ease;
         }
 
-        .skill-level {
-            background: var(--gradient-magic);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
+        .project-links a:hover {
+            color: #00d2ff;
         }
 
         /* Certifications Section */
         .certifications-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 30px;
         }
 
         .cert-card {
             background-color: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px var(--shadow-color);
             transition: all 0.3s ease;
-            border: 1px solid transparent;
-            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-                        linear-gradient(135deg, transparent 30%, rgba(20, 126, 251, 0.1), rgba(157, 78, 221, 0.1)) border-box;
+            border: 1px solid var(--card-border);
         }
 
         .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(20, 126, 251, 0.25);
+            transform: translateY(-8px);
+            border-color: rgba(0, 210, 255, 0.3);
         }
 
         .cert-img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .cert-card:hover .cert-img {
-            transform: scale(1.03);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .cert-content {
@@ -481,12 +539,9 @@
         }
 
         .cert-content h4 {
-            font-size: 1.7rem;
-            margin-bottom: 10px;
-            background: var(--gradient-magic);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--dark-color);
         }
 
         .cert-content p {
@@ -510,7 +565,6 @@
             font-size: 1.6rem;
             color: var(--light-color);
             margin-bottom: 30px;
-            max-width: 500px;
         }
 
         .contact-item {
@@ -520,32 +574,33 @@
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-magic);
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-glow);
+            border: 1px solid rgba(0, 210, 255, 0.3);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            color: white;
-            font-size: 2.2rem;
+            color: #00d2ff;
+            font-size: 2.0rem;
         }
 
         .contact-details h4 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            font-size: 1.6rem;
+            margin-bottom: 2px;
         }
 
         .contact-details a, .contact-details p {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--light-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-details a:hover {
-            color: #9d4edd;
+            color: #00d2ff;
         }
 
         .social-links {
@@ -558,32 +613,30 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background-color: var(--card-bg);
             color: var(--light-color);
             border-radius: 50%;
             font-size: 1.8rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(157, 78, 221, 0.3);
+            border: 1px solid var(--card-border);
         }
 
         .social-link:hover {
             background: var(--gradient-magic);
             color: white;
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: transparent;
         }
 
         .contact-card {
             background-color: var(--card-bg);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 10px 30px var(--shadow-color);
-            border: 1px solid transparent;
-            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-                        linear-gradient(135deg, transparent 30%, rgba(20, 126, 251, 0.1), rgba(157, 78, 221, 0.1)) border-box;
+            border: 1px solid var(--card-border);
         }
 
         .contact-card h3 {
@@ -597,10 +650,10 @@
 
         /* Footer */
         footer {
-            background-color: #050505;
+            background-color: #04060a;
             color: white;
             padding: 60px 0 30px;
-            border-top: 1px solid rgba(157, 78, 221, 0.2);
+            border-top: 1px solid var(--card-border);
         }
 
         .footer-content {
@@ -611,7 +664,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .footer-logo span {
@@ -622,45 +675,19 @@
         }
 
         .footer-text {
-            font-size: 1.6rem;
-            color: #aaa;
-            margin-bottom: 40px;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            margin-bottom: 30px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .footer-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: white;
-            border-radius: 50%;
-            font-size: 1.8rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--gradient-magic);
-            transform: translateY(-5px);
-        }
-
         .copyright {
             font-size: 1.4rem;
-            color: #777;
+            color: #555;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Responsive Design */
@@ -669,28 +696,28 @@
             .hero-content, .about-content, .contact-content { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 4rem; }
             .hero-image { order: -1; }
-            .profile-img { width: 300px; height: 300px; }
-            .tech-icon { width: 50px; height: 50px; font-size: 2rem; }
+            .profile-img { width: 280px; height: 280px; }
+            .tech-icon { width: 45px; height: 45px; font-size: 1.8rem; }
         }
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 75px;
                 left: 0;
-                background-color: rgba(22, 22, 22, 0.98);
+                background-color: rgba(8, 11, 17, 0.98);
                 backdrop-filter: blur(10px);
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
                 padding: 30px 0;
                 box-shadow: 0 10px 20px var(--shadow-color);
-                transform: translateY(-100%);
+                transform: translateY(-150%);
                 opacity: 0;
                 transition: all 0.3s ease;
                 z-index: 999;
-                border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+                border-bottom: 1px solid var(--card-border);
             }
             .nav-links.active {
                 transform: translateY(0);
@@ -699,16 +726,13 @@
             .nav-links li { margin: 15px 0; }
             .hero-text h1 { font-size: 3.5rem; }
             .section-title { font-size: 2.8rem; }
-            .skills-container, .certifications-container { grid-template-columns: 1fr; }
+            .skills-container, .projects-grid, .certifications-container { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 576px) {
             html { font-size: 50%; }
-            .hero-text h1 { font-size: 3rem; }
             .hero-btns { flex-direction: column; gap: 15px; }
-            .btn { width: 100%; text-align: center; }
-            .profile-img { width: 250px; height: 250px; }
-            .section-title { font-size: 2.5rem; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -717,7 +741,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Sukesh<span>R</span></a>
+                <a href="#" class="logo">Sukesh<span>.AI</span></a>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -725,6 +749,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -738,30 +763,21 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hi, I'm <span class="highlight">Sukesh R</span></h1>
-                    <h2>AI & Data Science Student</h2>
-                    <p>Aspiring AI Engineer with expertise in web development and programming. Passionate about creating intelligent solutions and currently pursuing my B.Tech at Sri Krishna College of Engineering and Technology, Coimbatore.</p>
+                    <h2>AI & Machine Learning Engineer</h2>
+                    <p>B.Tech student in Artificial Intelligence & Data Science at SKCET. Passionate about designing machine learning models, deep learning architectures, and scalable web solutions to solve complex real-world problems.</p>
                     <div class="hero-btns">
-                        <a href="#contact" class="btn">Contact Me</a>
-                        <a href="#certifications" class="btn">View Certifications</a>
+                        <a href="#projects" class="btn"><i class="fas fa-project-diagram"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-container">
-                        <!-- Your Profile Picture -->
-                        <img src="https://i.ibb.co/hR793hqF/IMG-20260125-230151.jpg" alt="Sukesh R - AI Student" class="profile-img">
+                        <img src="https://i.ibb.co/hR793hqF/IMG-20260125-230151.jpg" alt="Sukesh R - AI Engineer" class="profile-img">
                         <div class="tech-icons">
-                            <div class="tech-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="tech-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="tech-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="tech-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
+                            <div class="tech-icon" title="Python"><i class="fab fa-python"></i></div>
+                            <div class="tech-icon" title="Machine Learning"><i class="fas fa-brain"></i></div>
+                            <div class="tech-icon" title="Deep Learning"><i class="fas fa-network-wired"></i></div>
+                            <div class="tech-icon" title="Web Development"><i class="fas fa-code"></i></div>
                         </div>
                     </div>
                 </div>
@@ -775,27 +791,26 @@
             <h2 class="section-title">About <span class="highlight">Me</span></h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>My Journey in AI & Technology</h3>
-                    <p>I'm a dedicated Artificial Intelligence & Data Science student with a strong passion for technology and innovation. My goal is to become an AI Engineer who can develop intelligent solutions to real-world problems.</p>
-                    <p>Alongside my AI specialization, I have developed comprehensive web development skills, allowing me to create interactive and user-friendly applications. I believe in the power of combining AI with web technologies to build comprehensive solutions.</p>
-                    <p>My academic journey at Sri Krishna College of Engineering and Technology has provided me with a solid foundation in computer science principles, mathematics, and data analysis techniques.</p>
+                    <h3>Building the Future with Intelligent Systems</h3>
+                    <p>I am an Artificial Intelligence & Data Science student with a strong technical foundation in algorithmic design, data analysis, and predictive modeling.</p>
+                    <p>My goal is to bridge the gap between complex AI algorithms and practical user-facing applications. By combining Machine Learning expertise with modern web technologies, I develop end-to-end intelligent systems that deliver impactful user experiences.</p>
+                    <p>Continuous learning and staying updated with state-of-the-art developments in GenAI, Computer Vision, and Cloud Infrastructure drive my practical approach to software engineering.</p>
                 </div>
                 <div class="education-card">
-                    <h3>Education & Background</h3>
+                    <h3>Education & Academic Track</h3>
                     <div class="institution">
-                        <i class="fas fa-university"></i>
+                        <i class="fas fa-graduation-cap"></i>
                         <div>
                             <h4>Sri Krishna College of Engineering and Technology</h4>
-                            <p>B.Tech in Artificial Intelligence & Data Science</p>
-                            <p>Coimbatore, Tamil Nadu</p>
-                            <p><strong>Currently Enrolled</strong></p>
+                            <p><strong>Degree:</strong> B.Tech in Artificial Intelligence & Data Science</p>
+                            <p><strong>Location:</strong> Coimbatore, Tamil Nadu</p>
                         </div>
                     </div>
                     <div class="institution">
                         <i class="fas fa-bullseye"></i>
                         <div>
-                            <h4>Career Goal</h4>
-                            <p>To work as an AI Engineer specializing in machine learning and deep learning applications, creating impactful AI-driven solutions.</p>
+                            <h4>Career Vision</h4>
+                            <p>To engineer scalable ML pipelines, develop state-of-the-art AI models, and optimize production systems as an AI/ML Engineer.</p>
                         </div>
                     </div>
                 </div>
@@ -806,50 +821,156 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
             <div class="skills-container">
+                
+                <!-- AI & ML Core -->
                 <div class="skill-card">
                     <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Web Development</h3>
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI & Machine Learning</h3>
                     </div>
-                    <ul class="skill-list">
-                        <li>HTML <span class="skill-level">Advanced</span></li>
-                        <li>CSS <span class="skill-level">Advanced</span></li>
-                        <li>JavaScript <span class="skill-level">Intermediate</span></li>
-                        <li>Responsive Design <span class="skill-level">Intermediate</span></li>
-                    </ul>
+                    <div class="tags">
+                        <span class="tag">Supervised Learning</span>
+                        <span class="tag">Unsupervised Learning</span>
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Natural Language Processing</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
                 </div>
+
+                <!-- Frameworks & Libraries -->
                 <div class="skill-card">
                     <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                        <div class="skill-icon"><i class="fas fa-cubes"></i></div>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Matplotlib / Seaborn</span>
+                    </div>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
                         <h3>Programming Languages</h3>
                     </div>
-                    <ul class="skill-list">
-                        <li>Python <span class="skill-level">Advanced</span></li>
-                        <li>C++ <span class="skill-level">Intermediate</span></li>
-                        <li>Java<span class="skill-level">Intermediate</span></li>
-                         <li>C<span class="skill-level">Intermediate</span></li>
-                    </ul>
+                    <div class="tags">
+                        <span class="tag">Python (Advanced)</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">C</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                 </div>
+
+                <!-- Web Development -->
                 <div class="skill-card">
                     <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI & Data Science</h3>
+                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Web Engineering</h3>
                     </div>
-                    <ul class="skill-list">
-                        <li>Machine Learning <span class="skill-level">Learning</span></li>
-                        <li>Data Analysis <span class="skill-level">Learning</span></li>
-                        <li>Data Visualization <span class="skill-level">Learning</span></li>
-                        <li>Statistical Modeling <span class="skill-level">Learning</span></li>
-                    </ul>
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Flask / Fast API</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
                 </div>
+
+                <!-- MLOps & Tools -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Tools & Cloud</h3>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">AWS Cloud</span>
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">Jupyter Notebooks</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">AI Image Classification Model</h3>
+                        <p class="project-desc">Built a Convolutional Neural Network (CNN) model using PyTorch to classify multi-class image datasets with customized data augmentation and optimization techniques.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                        <div class="project-footer">
+                            <span>Accuracy: 94%</span>
+                            <div class="project-links">
+                                <a href="https://github.com/sukesh-r-ai" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">Interactive AI Portfolio</h3>
+                        <p class="project-desc">Designed and deployed a responsive dark-themed developer portfolio showcasing engineering projects, skills, and certifications built with modern web technologies.</p>
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-footer">
+                            <span>Frontend</span>
+                            <div class="project-links">
+                                <a href="https://github.com/sukesh-r-ai" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">Predictive Data Analytics Pipeline</h3>
+                        <p class="project-desc">Implemented a machine learning pipeline utilizing Scikit-Learn algorithms to analyze tabular data, perform feature engineering, and predict target outcomes.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                        <div class="project-footer">
+                            <span>Data Science</span>
+                            <div class="project-links">
+                                <a href="https://github.com/sukesh-r-ai" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -857,67 +978,57 @@
     <!-- Certifications Section -->
     <section id="certifications">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
-            <p style="font-size: 1.8rem; text-align: center; color: var(--light-color); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Demonstrating my commitment to continuous learning and skill development in technology, AI, and cloud computing.
-            </p>
+            <h2 class="section-title">Certifications & <span class="highlight">Credentials</span></h2>
             <div class="certifications-container">
-                <!-- Certification 1 -->
+                
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/Xr5FJ24Y/IMG-20251012-143546.jpg" alt="Certification 1" class="cert-img">
+                    <img src="https://i.ibb.co/Xr5FJ24Y/IMG-20251012-143546.jpg" alt="AWS Cloud Practitioner" class="cert-img">
                     <div class="cert-content">
                         <h4>AWS Cloud Practitioner</h4>
-                        <p>Foundation certification in AWS cloud concepts and services.</p>
+                        <p>Foundational certification in Amazon Web Services cloud architecture and services.</p>
                     </div>
                 </div>
-                <!-- Certification 2 -->
+
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/N6DF0R3c/IMG-20251012-162748.jpg" alt="Certification 2" class="cert-img">
+                    <img src="https://i.ibb.co/N6DF0R3c/IMG-20251012-162748.jpg" alt="Python Programming" class="cert-img">
                     <div class="cert-content">
                         <h4>Python Programming</h4>
-                        <p>Comprehensive certification in Python programming fundamentals.</p>
+                        <p>Advanced concepts in Python data structures, OOPs, and algorithmic problem-solving.</p>
                     </div>
                 </div>
-                <!-- Certification 3 -->
+
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/pjy1mt4K/Screenshot-2025-1014-204651.jpg" alt="Certification 3" class="cert-img">
+                    <img src="https://i.ibb.co/pjy1mt4K/Screenshot-2025-1014-204651.jpg" alt="Data Science Fundamentals" class="cert-img">
                     <div class="cert-content">
                         <h4>Data Science Fundamentals</h4>
-                        <p>Introduction to data science concepts and methodologies.</p>
+                        <p>Statistical inference, exploratory data analysis, and mathematical foundations.</p>
                     </div>
                 </div>
-                <!-- Certification 4 -->
+
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/V090ZGKz/Screenshot-2025-1022-104843.jpg" alt="Certification 4" class="cert-img">
+                    <img src="https://i.ibb.co/V090ZGKz/Screenshot-2025-1022-104843.jpg" alt="Machine Learning Basics" class="cert-img">
                     <div class="cert-content">
                         <h4>Machine Learning Basics</h4>
-                        <p>Foundational knowledge in machine learning algorithms.</p>
+                        <p>Hands-on implementation of regression, classification, and clustering techniques.</p>
                     </div>
                 </div>
-                <!-- Certification 5 -->
+
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/1tRWzLj2/Screenshot-2025-1022-201817.jpg" alt="Certification 5" class="cert-img">
+                    <img src="https://i.ibb.co/1tRWzLj2/Screenshot-2025-1022-201817.jpg" alt="Web Development" class="cert-img">
                     <div class="cert-content">
                         <h4>Web Development</h4>
-                        <p>Certification in modern web development technologies.</p>
+                        <p>Building scalable and responsive modern user interfaces.</p>
                     </div>
                 </div>
-                <!-- Certification 6 -->
+
                 <div class="cert-card">
-                    <img src="https://i.ibb.co/HLDXnnrt/Screenshot-2025-1028-072849.jpg" alt="Certification 6" class="cert-img">
+                    <img src="https://i.ibb.co/HLDXnnrt/Screenshot-2025-1028-072849.jpg" alt="AI Fundamentals" class="cert-img">
                     <div class="cert-content">
                         <h4>AI Fundamentals</h4>
-                        <p>Core concepts of Artificial Intelligence and its applications.</p>
+                        <p>Core foundations of Artificial Intelligence, algorithms, and intelligent systems.</p>
                     </div>
                 </div>
-                <!-- Certification 7 -->
-                <div class="cert-card">
-                    <img src="https://i.ibb.co/DyyThGd/Screenshot-2025-1101-200249.jpg" alt="Certification 7" class="cert-img">
-                    <div class="cert-content">
-                        <h4>Cloud Computing</h4>
-                        <p>Understanding of cloud infrastructure and deployment models.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -928,13 +1039,11 @@
             <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect!</h3>
-                    <p>I'm always open to discussing new opportunities, collaborations, or just chatting about AI, technology, and innovation. Feel free to reach out through any of my profiles or send me an email.</p>
+                    <h3>Let's Collaborate</h3>
+                    <p>I am actively seeking internship and project opportunities in AI engineering, Machine Learning development, and software design. Feel free to reach out directly via email or social links.</p>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-details">
                             <h4>Email</h4>
                             <a href="mailto:sukesh.r.code@gmail.com">sukesh.r.code@gmail.com</a>
@@ -942,79 +1051,41 @@
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-university"></i></div>
                         <div class="contact-details">
-                            <h4>Education</h4>
+                            <h4>Institution</h4>
                             <p>Sri Krishna College of Engineering and Technology</p>
-                            <p>Coimbatore, Tamil Nadu</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Aspiring</h4>
-                            <p>AI Engineer</p>
-                        </div>
-                    </div>
-                    
+
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sukesh-r-16637037a" class="social-link" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/sukesh-r-ai" class="social-link" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/suk_es_h_._001" class="social-link" target="_blank" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:sukesh.r.code@gmail.com" class="social-link" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                        <a href="https://www.linkedin.com/in/sukesh-r-16637037a" class="social-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sukesh-r-ai" class="social-link" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/suk_es_h_._001" class="social-link" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="contact-card">
-                    <h3>Professional Profiles</h3>
+                    <h3>Professional Links</h3>
+                    
                     <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(90deg, #0a66c2, #004182);">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
                         <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/sukesh-r-16637037a" target="_blank">linkedin.com/in/sukesh-r-16637037a</a>
-                            <p>Connect with me professionally</p>
+                            <h4>LinkedIn Profile</h4>
+                            <a href="https://www.linkedin.com/in/sukesh-r-16637037a" target="_blank">Connect on LinkedIn</a>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(90deg, #333, #000);">
-                            <i class="fab fa-github"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
                         <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/sukesh-r-dev" target="_blank">github.com/sukesh-r-dev</a>
-                            <p>Check out my projects and code</p>
+                            <h4>GitHub Profile</h4>
+                            <a href="https://github.com/sukesh-r-ai" target="_blank">Explore Repositories</a>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(90deg, #e1306c, #833ab4);">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Instagram</h4>
-                            <a href="https://www.instagram.com/_sukesh_._" target="_blank">@_sukesh_._</a>
-                            <p>Follow me for updates</p>
-                        </div>
-                    </div>
-                    
-                    <a href="mailto:sukesh.r.code@gmail.com" class="btn" style="margin-top: 20px; width: 100%; text-align: center;">
-                        <i class="fas fa-envelope"></i> Send Email
+                    <a href="mailto:sukesh.r.code@gmail.com" class="btn" style="margin-top: 20px; width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Direct Email
                     </a>
                 </div>
             </div>
@@ -1025,33 +1096,17 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Sukesh<span>R</span></div>
-                <p class="footer-text">AI & Data Science Student | Aspiring AI Engineer | Web Developer | Passionate about Technology & Innovation</p>
-                
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/sukesh-r-16637037a" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/sukesh-r-ai" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/suk_es_h_._001" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="mailto:sukesh.r.code@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                
+                <div class="footer-logo">Sukesh<span>.AI</span></div>
+                <p class="footer-text">Artificial Intelligence & Data Science Engineer | SKCET Coimbatore</p>
                 <div class="copyright">
-                    <p>&copy; Sukesh R. All Rights Reserved. | Sri Krishna College of Engineering and Technology, Coimbatore</p>
+                    <p>&copy; Sukesh R. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile Navbar Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         
@@ -1059,47 +1114,14 @@
             navLinks.classList.toggle('active');
         });
         
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
-        
-        // Header shadow on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.5)';
-            } else {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
+
+        // Intersection Observer for Animations
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -1109,10 +1131,9 @@
             });
         }, observerOptions);
         
-        // Observe elements for animation
-        document.querySelectorAll('.hero-text, .about-text, .education-card, .skill-card, .cert-card, .contact-info, .contact-card').forEach(el => {
+        document.querySelectorAll('.hero-text, .about-text, .education-card, .skill-card, .project-card, .cert-card, .contact-info, .contact-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
+            el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
